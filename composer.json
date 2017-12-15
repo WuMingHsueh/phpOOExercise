@@ -1,0 +1,16 @@
+{
+    "name": "wuminghsueh/php_oop_exercise",
+    "description": "just for exercise book Learning php(chapter 6) and PHP and MySQL Web Development (chater 6)",
+    "authors": [
+        {
+            "name": "Wu Ming-Hsueh",
+            "email": "ri3567@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "OOExercise\\":"app/"
+        }
+    }
+}
