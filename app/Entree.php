@@ -4,12 +4,12 @@ namespace OOExercise;
 
 class Entree
 {
-    public $name;
-    public $ingredients = [];
+    private $name;
+    protected $ingredients = [];
     public $dinner = "披薩";
     private $lunch = "鍋貼";
 
-    public function _construct($name, array $ingredients)
+    public function __construct($name, array $ingredients)
     {
         $this->name = $name;
         $this->ingredients = $ingredients;

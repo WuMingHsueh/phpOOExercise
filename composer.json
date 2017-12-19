@@ -7,10 +7,14 @@
             "email": "ri3567@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "psr/log": "^1.0",
+        "monolog/monolog": "^1.23"
+    },
     "autoload": {
         "psr-4": {
-            "OOExercise\\":"app/"
+            "OOExercise\\":"app/",
+            "OOExercise\\Wappen\\": "app/Wappen"
         }
     }
 }
