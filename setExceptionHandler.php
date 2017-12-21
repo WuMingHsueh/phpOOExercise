@@ -1,14 +1,23 @@
 <?php
-set_exception_handler(function(\Exception $e) {
-    include __DIR__ . "./vendor/autoload.php";
-    $logger = new Monolog\Logger("ExceptionHander");
-    $logger->pushHandler(new Monolog\Handler\StreamHandler( __DIR__."./logs/wuminghsueh.log" , Monolog\Logger::ERROR));
+include __DIR__ . "./vendor/autoload.php";
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+
+$logger = new Logger("ExceptionHandler");
+$logger->pushHandler(new StreamHandler(__DIR__."./logs/wuminghsueh.log", Logger::ERROR));
+set_exception_handler(function(\Exception $e) use ($logger) {
     $logger->error("Exception " . $e->getCode() . ": " . $e->getMessage(). " in " . $e->getFile() . " on line " . $e->getLine());
 });
 ?>
 
 <?php
-throw new Exception("wuminghsueh believe", 1);
+
+function throwException()
+{
+    throw new Exception("wuminghsueh believe", 1);
+}
+
+throwException();
 ?>
 
 <?php restore_exception_handler(); ?>
